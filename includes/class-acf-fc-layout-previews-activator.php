@@ -30,7 +30,12 @@ class Acf_Fc_Layout_Previews_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-
+        $upload = wp_upload_dir();
+        $upload_dir = $upload['basedir'];
+        $upload_dir = $upload_dir . '/acf-fc-layouts';
+        if (!is_dir($upload_dir)) {
+            mkdir($upload_dir);
+        }
 	}
 
 }

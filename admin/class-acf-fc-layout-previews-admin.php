@@ -62,8 +62,6 @@ class Acf_Fc_Layout_Previews_Admin {
 	public function enqueue_styles() {
 
 		/**
-		 * This function is provided for demonstration purposes only.
-		 *
 		 * An instance of this class should be passed to the run() function
 		 * defined in Acf_Fc_Layout_Previews_Loader as all of the hooks are defined
 		 * in that particular class.
@@ -85,8 +83,6 @@ class Acf_Fc_Layout_Previews_Admin {
 	public function enqueue_scripts() {
 
 		/**
-		 * This function is provided for demonstration purposes only.
-		 *
 		 * An instance of this class should be passed to the run() function
 		 * defined in Acf_Fc_Layout_Previews_Loader as all of the hooks are defined
 		 * in that particular class.

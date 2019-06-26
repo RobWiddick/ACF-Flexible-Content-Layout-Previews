@@ -77,7 +77,7 @@ class Acf_Fc_Layout_Previews {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
-		$this->define_public_hooks();
+		//$this->define_public_hooks();
 
 	}
 
@@ -157,6 +157,10 @@ class Acf_Fc_Layout_Previews {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+        add_action('admin_enqueue_scripts', function() {
+            $uploadDir = wp_upload_dir();
+            echo "<script>window.acf_fc_layout_previews_uploads_url = \"{$uploadDir['baseurl']}/acf-fc-layouts/\";</script>";
+        });
 	}
 
 	/**
@@ -168,10 +172,12 @@ class Acf_Fc_Layout_Previews {
 	 */
 	private function define_public_hooks() {
 
+	    /**
 		$plugin_public = new Acf_Fc_Layout_Previews_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+        **/
 
 	}
 

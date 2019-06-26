@@ -10,7 +10,4 @@
  *
  * @package    Acf_Fc_Layout_Previews
  * @subpackage Acf_Fc_Layout_Previews/public/partials
- */
-?>
-
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+*/

@@ -124,6 +124,25 @@ class Acf_Fc_Layout_Previews_Loader {
 			add_action( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
 		}
 
+        $upload = wp_upload_dir();
+        $upload_dir = $upload['basedir'];
+        $upload_dir = $upload_dir . '/acf-fc-layouts';
+        if (!is_dir($upload_dir)) {
+            mkdir($upload_dir);
+        }
+
+        $fi = new FilesystemIterator($upload_dir, FilesystemIterator::SKIP_DOTS);
+        if(!iterator_count($fi)) {
+            add_action('admin_notices', function () {
+                $upload = wp_upload_dir();
+                $upload_dir = $upload['basedir'];
+                $class = 'notice notice-success is-dismissible';
+                $message = __('ACF FC Layout Previews Activated! Please add your images to ' . $upload_dir . '/acf-fc-layouts to hide this message.', 'acf-fc-layout-previews');
+
+                printf('<div class="%1$s"><p>%2$s</p></div>', esc_attr($class), esc_html($message));
+            });
+        }
+
 	}
 
 }
