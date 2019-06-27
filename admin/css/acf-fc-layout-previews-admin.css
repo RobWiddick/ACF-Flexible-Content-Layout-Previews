@@ -7,8 +7,6 @@
 }
 
 .acf-fc-popup.acf-admin-popup-enabled .wrapper {
-    /*width: auto;
-    height: 97vh;*/
     position: relative;
     left: -50%;
     -webkit-transform: translateY(-50%);
@@ -30,6 +28,10 @@
     width: 80vw;
     height: auto;
     max-width: 100%;
+}
+
+.acf-fc-popup.acf-admin-popup-enabled ul li a em {
+    font-size: 70%;
 }
 
 .acf-admin-popup-background {
